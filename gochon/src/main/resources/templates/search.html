@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <form name="search_form" method="post" th:action="@{/gochon/view}">
+        치킨 고유번호 : <input type="text" maxlength="2" value="" name="CKno">
+        <input type="submit" value="조회">
+    </form>
+</body>
+</html>

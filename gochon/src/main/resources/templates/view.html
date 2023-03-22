@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let contextRoot = /*[[@{/}]]*/ '';
+    function backToSearch() {
+        let form = document.createElement("form");
+       	form.setAttribute("method", "get");
+        form.setAttribute("action", contextRoot + "/gochon/search");
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
+</head>
+<body>
+    치킨 고유번호: <input type="text" th:value="${chichken.chichken_no}"><br>
+    치킨 이름: <input type="text" th:value="${chichken.chicken_name}"><br>
+    치킨 업데이트 날짜: <input type="text" th:value="${chichken.update_day}"><br>
+    치킨 가격: <input type="text" th:value="${chichken.price}"><br>
+    치킨 원산지: <input type="text" th:value="${chichken.origin}"><br>
+    <input type="button" value="돌아가기" th:onclick="backToSearch()">
+</body>
+</html>
