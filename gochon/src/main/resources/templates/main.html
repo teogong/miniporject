@@ -16,16 +16,26 @@
 					margin-left : 60px;
 					margin-bottom: 60px; }
     </style>
+    <script>
+	let contextRoot = /*[[@{/}]]*/ '';
+	    function backToSearch() {
+	        let form = document.createElement("form");
+	       	form.setAttribute("method", "get");
+	        form.setAttribute("action", contextRoot + "/gochon/search");
+	        document.body.appendChild(form);
+	        form.submit();
+	    }
+	</script>
 </head>
 <body>
     <div id="header" class="newUi" style="padding-bottom: 0px;">
-		<a href="http://www.kyochon.com/main/index.asp"><h1 id=logo >고촌치킨</h1></a>
+		<a th:onclick="backToSearch()"><h1 id=logo >고촌치킨</h1></a>
 		
 		<hr>
 		
 		<div id="pageNavi" class="fixed">
 			<!-- 메뉴 -->
-		<ul style="">
+		<ul>
 			<li class="home"><a href="/main/index.asp">로그인</a></li>
 			<li class="home"><a href="/main/index.asp">회원가입</a></li>
 			<li class="home"><a href="/main/index.asp">메뉴</a></li>
@@ -34,8 +44,8 @@
 				</div>
 			</li>
 			<li class="depth2">
-				<a href="javascript:void(0);" class="openMenu">치킨</a>
-				<div class="menuBox" style="">
+				<a href="" class="openMenu">치킨</a>
+				<div class="menuBox">
 					<a href="/menu/chicken.asp" class="active">치킨</a>
 					<a href="/menu/side.asp">사이드</a>
 					<a href="/menu/liquor.asp">수제맥주</a>
