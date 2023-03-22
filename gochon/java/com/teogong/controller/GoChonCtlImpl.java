@@ -40,4 +40,13 @@ public class GoChonCtlImpl implements GoChonController {
 		return "view";
 	}
 
+	@Override
+	@GetMapping("/main")
+	public String main() throws Exception {
+		// TODO Auto-generated method stub
+		return "main";
+	}
+	
+	
+
 }

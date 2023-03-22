@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고촌치킨</title>
+	<style>
+		body { background-color : linen; color : red; 
+				margin-left : 0px; margin-right : 0px; }
+		#logo { text-align : center; color : black; }
+		hr { height : 1px; border:solid grey;
+				background-color : grey; }
+		article {   float: left;
+					margin-left : 60px;
+					margin-bottom: 60px; }
+    </style>
+</head>
+<body>
+    <div id="header" class="newUi" style="padding-bottom: 0px;">
+		<a href="http://www.kyochon.com/main/index.asp"><h1 id=logo >고촌치킨</h1></a>
+		
+		<hr>
+		
+		<div id="pageNavi" class="fixed">
+			<!-- 메뉴 -->
+		<ul style="">
+			<li class="home"><a href="/main/index.asp">로그인</a></li>
+			<li class="home"><a href="/main/index.asp">회원가입</a></li>
+			<li class="home"><a href="/main/index.asp">메뉴</a></li>
+			<li class="home"><a href="/main/index.asp">주문</a></li>
+					<!--<a href="/online/online.asp">온라인주문</a>-->
+				</div>
+			</li>
+			<li class="depth2">
+				<a href="javascript:void(0);" class="openMenu">치킨</a>
+				<div class="menuBox" style="">
+					<a href="/menu/chicken.asp" class="active">치킨</a>
+					<a href="/menu/side.asp">사이드</a>
+					<a href="/menu/liquor.asp">수제맥주</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<hr>
+
+    <article><img th:src="@{/images/방콕점보윙(R)_list.jpg}" width="300" height="250" alt="방콕점보윙(R)_list"></article>
+    <article><img th:src="@{/images/방콕점보윙(s)_list.jpg}" width="300" height="250"  alt="방콕점보윙(s)_list"></article>
+    <article><img th:src="@{/images/블랙시크릿콤보(S)_list.jpg}" width="300" height="250" alt="블랙시크릿콤보(S)_list"></article>
+    <article><img th:src="@{/images/블랙시크릿콤보_list.jpg}" width="300" height="250" alt="블랙시크릿콤보_list"></article>
+    <article><img th:src="@{/images/블랙시크릿-오리지날_list.jpg}" width="300" height="250" alt="블랙시크릿-오리지날_list"></article>         
+    <article><img th:src="@{/images/블랙시크릿-순살(R)_list.jpg}" width="300" height="250" alt="블랙시크릿-순살(R)_list"></article>
+    <article><img th:src="@{/images/블랙시크릿-순살(S)_list.jpg}" width="300" height="250" alt="블랙시크릿-순살(S)_list"></article>
+    <article><img th:src="@{/images/고촌콤보.jpg}" width="300}" height="250" alt="고촌콤보"></article>
+    <article><img th:src="@{/images/고촌오리지날.jpg}" width="300" height="250" alt="고촌오리지날"></article>
+</body>
+</html>
