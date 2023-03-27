@@ -8,7 +8,7 @@
     function backToSearch() {
         let form = document.createElement("form");
        	form.setAttribute("method", "get");
-        form.setAttribute("action", contextRoot + "/gochon/search");
+        form.setAttribute("action", "[[@{/gochon/search}]]");
         document.body.appendChild(form);
         form.submit();
     }

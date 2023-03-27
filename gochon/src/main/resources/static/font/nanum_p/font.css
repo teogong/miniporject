@@ -1,0 +1,26 @@
+/*
+ * Nanum Barun Gothic Pen(Korean) http://hangeul.naver.com
+ */
+
+@font-face {
+  font-family: 'Nanum Barun Gothic Pen';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NanumBarunpenR'), local('NanumBarunpenR'), local('NanumBarunpenR');
+  src: url(./NanumBarunpenR.eot);
+  src: url(./NanumBarunpenR.eot?#iefix) format('embedded-opentype'),
+       url(./NanumBarunpenR.woff) format('woff'),
+       url(./NanumBarunpenR.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Barun Gothic Pen';
+  font-style: normal;
+  font-weight: 700;
+  src: local('NanumBarunpenB'), local('NanumBarunpenB'), local('NanumBarunpenB');
+  src: url(./NanumBarunpenB.eot);
+  src: url(./NanumBarunpenB.eot?#iefix) format('embedded-opentype'),
+       url(./NanumBarunpenB.woff) format('woff'),
+       url(./NanumBarunpenB.ttf) format('truetype');
+}
+

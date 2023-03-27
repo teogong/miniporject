@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teogong.model.EventDao">
+	<resultMap id="eventResult" type="eventVo">
+		<result property="event_no" column="event_no" />
+		<result property="event_title" column="event_title" />
+		<result property="event_contents" column="event_contents" />
+		<result property="event_write_date" column="event_write_date" />
+		<result property="event_write_id" column="event_write_id" />
+	</resultMap>
+	
+	<select id="selectAllEvents" resultMap="eventResult">
+		<![CDATA[
+			select * from eventboard order by event_write_id desc
+		]]>
+	</select>
+</mapper>

@@ -7,5 +7,6 @@ public interface GoChonController {
 	public String viewSearch() throws Exception;
 	public String getChicken(Model model,@RequestParam(value="CKno") String ckno) throws Exception;
 	public String main() throws Exception;
+	public String getEventList(Model model) throws Exception;
 }
 
