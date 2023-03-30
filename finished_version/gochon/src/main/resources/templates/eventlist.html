@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>이벤트 페이지</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
+        <style>
+            .cls1 {
+                text-decoration: none;
+                color: inherit;
+            }
+            .cls2 {
+                text-align: center;
+                font-size: 30px;
+                display: block;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            ol,
+            ul {
+                list-style: none outside;
+            }
+            li {
+                display: list-item;
+                text-align: -webkit-match-parent;
+            }
+
+            img {
+                overflow-clip-margin: content-box;
+                overflow: clip;
+            }
+
+            div {
+                display: block;
+            }
+
+            h1 {
+                display: block;
+                font-size: 2em;
+                margin-block-start: 0.67em;
+                margin-block-end: 0.67em;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                font-weight: bold;
+                font-size: 100%;
+                font-weight: normal;
+            }
+
+            body,
+            input,
+            select,
+            td,
+            textarea,
+            th {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 18px;
+                font-family: 'Noto Sans KR', dotum, sans-serif;
+                color: #444;
+            }
+
+            /* 네비게이션바 색상 변경[s]*/
+            #header > .inner > #gnb > ul > li.gnb01 > a:hover {
+                background: #FFC500;
+                display: inline-block;
+                border-radius: 40px;
+                background-position: center -31px;
+            }
+            #header > .inner > #gnb > ul > li.gnb03 > a:hover {
+                background: #FFC500;
+                display: inline-block;
+                border-radius: 40px;
+                background-position: center -31px;
+            }
+            /* 네비게이션바 색상 변경[e]*/
+
+            /* 하위 메뉴 부분*/
+            #header > .inner > #gnb > ul > li:hover .gnbSub {
+                display: block;
+            }
+
+            #pageNavi > ul > li:hover .menuBox {
+                display: block;
+            }
+
+            /* li:hover {background: yellowgreen;} */
+
+            /* 밑단 로고 css  시작*/
+            /* #footer.newUi {
+                max-width: 100%;
+                border-top: 1px #ddd solid;
+                background: #fff;
+                z-index: 10;
+            }
+
+            #footer.newUi>.footCont {
+                text-align: center;
+            }
+            
+            #footer>.footCont>.topLink>.link>a {
+                color: #737373;
+            }
+            
+            #footer.newUi>.footCont>.textBox>span {
+                font-size: 14px;
+                line-height: 27px;
+                color: #737373;
+            }
+
+            #footer.newUi>.footCont>address {
+                font-size: 14px;
+                color: #737373;
+            }
+        
+        #footer>.footCont>.topLink>.link>a {
+                padding: 0 10px 0 12px;
+                background: url([[@{/line/line_footer01.gif}]]) no-repeat left 5px;
+                font-size: 14px;
+                line-height: 23px;
+                color: #281c18;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            #footer>.footCont>.topLink>.link>a:first-child {
+                padding-left: 0;
+                background: none;
+            }
+            
+            #footer.newUi>.footCont>.midLink {
+                margin-top: 28px;
+                margin-bottom: 28px;
+            }
+            
+            #footer.newUi>.footCont>.midLink .sns_links {
+                display: inline-block;
+                padding: 0 25px;
+                margin: 0 25px;
+                vertical-align: middle;
+                position: relative;
+            }
+            
+            
+            #footer.newUi>.footCont>.midLink .sns_links:before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 13px;
+                background: #B6B6B6;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0px;
+            }
+            
+            #footer.newUi>.footCont>.midLink .sns_links:after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 13px;
+                background: #B6B6B6;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0px;
+            }
+            
+            #footer>.footCont>.textBox>span {
+                padding: 0 7px 0 9px;
+                background: url([[@{/line/line_footer02.gif}]]) no-repeat left 1px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            #footer.newUi>.footCont>.textBox>span {
+                background-position: left center;
+            }
+            
+            #footer.newUi>.footCont>.textBox>span.no_line {
+                background: none;
+            }
+            
+            #footer.newUi>.footCont {
+                text-align: center;
+                max-width: 1530px;
+                border-top: 0;
+                padding-top: 55px;
+                margin: auto;
+            }
+            
+            #footer.newUi>.footCont>.midLink {
+                margin-top: 28px;
+                margin-bottom: 28px;
+            }
+            
+            #footer>.footCont>.textBox {
+                margin: 10px 0 5px -9px;
+            }
+            
+            #footer.newUi {
+                max-width: 100%;
+                border-top: 1px #ddd solid;
+                background: #fff;
+                z-index: 10;
+            }  */
+                    /* 밑단 로고 css  끝*/
+        </style>
+    </head>
+    <body>
+
+        <div id="wrap">
+
+            <div id="header" class="newUi">
+                <div class="inner">
+
+                    <!--logo -->
+                    <h1 class="season">
+                        <a th:href="@{/gochon/main}">
+
+                            <img th:src="@{/log/h1_logo_new2022.png}" alt="GoChon 1991">
+
+                        </a>
+                    </h1>
+
+                    <div id="gnb">
+                        <!-- Global Navigation Bar -->
+                        <ul class="c_box">
+                            <!-- 메뉴 링크 변경 link0101에서 link0102로 -->
+                            <li class="gnb01">
+                                <a th:href="@{/gochon/main}+'#menubox'" class="gnbBtn">메뉴</a>
+                                <div class="gnbSub">
+                                    <p class="bul"></p>
+                                    <div class="gnbSubBox">
+                                        <a th:href="@{/gochon/main}+'#menubox'">치킨</a>
+                                        <a th:href="@{/gochon/main}+'#beer'">사이드</a>
+                                        <a th:href="@{/gochon/main}+'#beer'">수제맥주</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gnb03 active">
+                                <a th:href="@{/gochon/listevent}" class="gnbBtn">이벤트</a>
+                                <div class="gnbSub">
+                                    <p class="bul"></p>
+                                    <div class="gnbSubBox">
+                                        <a th:href="@{/gochon/listevent}+'#container'">진행중인 이벤트</a>
+                                        <!-- <a href="#">지난 이벤트</a> <a href="#">당첨자 발표</a> -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pageNavi">
+                <!-- 메뉴 -->
+                <ul style="display:none;">
+                    <li class="home">
+                        <a th:href="@{/gochon/main}">Gochon home</a>
+                    </li>
+                    <li class="menu">
+                        <a th:href="@{/gochon/main}+'#menubox'" class="openMenu">메뉴</a>
+                        <div class="menuBox">
+                            <a th:href="@{/gochon/main}+'#menubox'">메뉴</a>
+                            <a th:href="@{/gochon/listevent}">이벤트</a>
+                        </div>
+                    </li>
+                    <li class="depth2">
+                        <a th:href="@{/gochon/listevent}" class="openMenu">이벤트</a>
+                        <div class="menuBox">
+                            <a th:href="@{/gochon/main}+'#menubox'">치킨</a>
+                            <a th:href="@{/gochon/main}+'#beer'">사이드</a>
+                            <a th:href="@{/gochon/main}+'#beer'">수제맥주</a>
+                        </div>
+                    </li>
+                    <!-- <li class="depth3" style="display: none;"> <a href="#">전체메뉴</a> <a
+                    href="#">[NEW]시즌한정메뉴</a> <a href="#">블랙시리즈</a> <a href="#">교촌시리즈</a> <a
+                    href="#">허니시리즈</a> <a href="#">레드시리즈</a> <a href="#">믹스시리즈</a> <a
+                    href="#">후라이드시리즈</a> </li> -->
+                </ul>
+
+                <!-- 이벤트 -->
+                <ul>
+                    <li class="home">
+                        <a th:href="@{/gochon/main}">Gochon home</a>
+                    </li>
+                    <li class="menu">
+                        <a th:href="@{/gochon/listevent}" class="openMenu">이벤트</a>
+                        <div class="menuBox">
+                            <a th:href="@{/gochon/main}+'#menubox'">메뉴</a>
+                            <a th:href="@{/gochon/listevent}" class="active">이벤트</a>
+                        </div>
+                    </li>
+                    <li class="depth2">
+                        <a th:href="@{/gochon/listevent}+'#container'" class="openMenu">진행중인 이벤트</a>
+                        <div class="menuBox">
+                            <a th:href="@{/gochon/listevent}+'#container'" class="active">진행중인 이벤트</a>
+                            <!-- <a href="#">지난 이벤트</a> <a href="#">당첨자 발표</a> -->
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div id="container">
+                <div id="contents">
+                    <h2 class="tac">이벤트</h2>
+                    <div id="section">
+                        <!-- 내용 -->
+                        <!--[s] tab -->
+                        <!-- <div class="tabImg bg_event"> <a href="#" class="icon01 active">진행중인
+                        이벤트</a> <a href="#" class="icon02">지난 이벤트</a> <a href="#;" class="icon03">당첨자
+                        발표</a> </div> -->
+                        <!--[e] tab -->
+
+                        <ul class="eventList mt50">
+                            <!--[s] 반복 -->
+                            <form th:each="eventarticle, eventarticleStat:${dataList}">
+                                <li th:if="${eventarticleStat.count}%2 != 0">
+                                    <p class="img">
+                                        <a th:href="@{/gochon/view}+'?no='+${eventarticle.event_no}"><img
+                                            th:src="@{/event}+'/'+${eventarticle.event_img}"
+                                            alt="${eventarticle.event_title}"
+                                            width="686"
+                                            height="249"></a>
+                                    </p>
+                                    <div>
+                                        <span class="progress">진행</span>
+                                        <dl>
+                                            <dt>
+                                                <a th:href="@{/gochon/view}+'?no='+${eventarticle.event_no}">[[${eventarticle.event_title}]]</a>
+                                            </dt>
+                                            <dd>이벤트기간 : [[${eventarticle.event_write_date_s}]] ~
+                                                [[${eventarticle.event_write_date_e}]]</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+
+                                <li th:if="${eventarticleStat.count}%2 == 0" class="right">
+                                    <p class="img">
+                                        <a th:href="@{/gochon/view}+'?no='+${eventarticle.event_no}"><img
+                                            th:src="@{/event}+'/'+${eventarticle.event_img}"
+                                            alt="${eventarticle.event_title}"
+                                            width="686"
+                                            height="249"></a>
+                                    </p>
+                                    <div>
+                                        <span class="progress">진행</span>
+                                        <dl>
+                                            <dt>
+                                                <a th:href="@{/gochon/view}+'?no='+${eventarticle.event_no}">[[${eventarticle.event_title}]]</a>
+                                            </dt>
+                                            <dd>이벤트기간 : [[${eventarticle.event_write_date_s}]] ~
+                                                [[${eventarticle.event_write_date_e}]]</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </form>
+
+                            <!-- <li> <p class="img"> <a href="#"><img th:src="@{/event/list(16).jpg}"
+                            alt="교촌 방콕점보윙 10% 할인" width="686" height="249"></a> </p> <div> <span
+                            class="progress">진행</span> <dl> <dt> <a href="#">교촌 방콕점보윙 10% 할인</a> </dt>
+                            <dd>이벤트기간 : 2023-03-17 ~ 2023-03-31</dd> </dl> </div> </li> <li class="right">
+                            <p class="img"> <a href="#"><img th:src="@{/event/list(17).jpg}"
+                            alt="https://b07a4.app.link/89oNrnUCKxb" width="686" height="249"></a> </p>
+                            <div> <span class="progress">진행</span> <dl> <dt> <a href="#">함께 응원해요. 1만원상당의
+                            혜택</a> </dt> <dd>이벤트기간 : 2023-03-01 ~ 2023-04-02</dd> </dl> </div> </li> <li> <p
+                            class="img"> <a href="#"><img th:src="@{/event/list_신메뉴.jpg}" alt="방콕점보윙 신메뉴출시"
+                            width="686" height="249"></a> </p> <div> <span class="progress">진행</span> <dl>
+                            <dt> <a href="#">[시즌한정] 교촌 신메뉴 '방콕점보윙' 출시</a> </dt> <dd>이벤트기간 : 2023-02-16 ~
+                            2023-03-31</dd> </dl> </div> </li> <li class="right"> <p class="img"> <a
+                            href="#"><img th:src="@{/event/list_블랙시크릿콤보s.jpg}" alt="또 하나의 역작! 블랙시크릿"
+                            width="686" height="249"></a> </p> <div> <span class="progress">진행</span> <dl>
+                            <dt> <a href="#">블랙시크릿[S] 와일드블랙소스 출시</a> </dt> <dd>이벤트기간 : 2023-02-16 ~
+                            2023-03-31</dd> </dl> </div> </li> <li> <p class="img"> <a href="#"><img
+                            th:src="@{/event/list_브랙시크릿소스무료.jpg}" alt="블랙시크릿 2/15" width="686"
+                            height="249"></a> </p> <div> <span class="progress">진행</span> <dl> <dt> <a
+                            href="#">블랙시크릿 주문 시 와일드블랙소스 무료증정</a> </dt> <dd>이벤트기간 : 2023-02-16 ~
+                            2023-03-31</dd> </dl> </div> </li> <li class="right"> <p class="img"> <a
+                            href="#"><img th:src="@{/event/list_태국가자.jpg}" alt="방콕점보윙 2/15" width="686"
+                            height="249"></a> </p> <div> <span class="progress">진행</span> <dl> <dt> <a
+                            href="#">방콕점보윙 먹고 태국가자</a> </dt> <dd>이벤트기간 : 2023-02-15 ~ 2023-03-31</dd> </dl>
+                            </div> </li> -->
+
+                            <!--[e] 반복 -->
+                        </ul>
+                        <!--[s] Paging -->
+                         <!-- <div class="paging_all c_box mt30">
+                            <div class="paging">
+                                <a href="ing.asp"><img th:src="@{/btn/btn_prev2.gif}" alt="Start"></a>
+
+                                <a href="ing.asp?page=1"><img th:src="@{/btn/btn_prev.gif}" alt="Prev"></a>
+                                <span class="num">
+
+                                    <strong>1</strong>
+
+                                </span>
+
+                                <a href="ing.asp?page=1"><img th:src="@{/btn/btn_next.gif}" alt="Next"></a>
+                                <a href="ing.asp?page=1"><img th:src="@{/btn/btn_next2.gif}" alt="End"></a>
+                            </div>
+                        </div> -->
+
+
+                        <!--[e] Paging -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer" class="newUi">
+                <div class="footCont">
+                    <div class="topLink">
+                        <span class="link">
+                            <a href="#">이용약관</a>
+                            <a href="#" class="privacy">개인정보처리방침</a>
+                            <a href="#" class="">영상정보처리기기 운영관리 방침</a>
+                            <a th:href="@{/gochon/add}">이벤트 페이지 만들기</a>
+                            <a href="#">찾아오시는 길</a>
+                        </span>
+                    </div>
+                    <div class="midLink">
+                        <img th:src="@{/ico/ico_callNumber.svg}" alt="전화주문 1577-1991">
+                        <span class="sns_links">
+                            <a href="https://www.facebook.com/kyochon1991" target="_blank" title="새창열림"><img th:src="@{/ico/ico_facebook.svg}" alt="교촌 facebook 바로가기"></a>
+                            <a
+                                href="https://www.instagram.com/kyochon_official"
+                                target="_blank"
+                                title="새창열림"><img th:src="@{/ico/ico_insta.svg}" alt="교촌 instagram 바로가기"></a>
+                            <a
+                                href="https://www.youtube.com/channel/UChcWXp8uJbcfq9EAIHp_bUw"
+                                target="_blank"
+                                title="새창열림"><img th:src="@{/ico/ico_youtube.svg}" alt="교촌 youtube 바로가기"></a>
+                            <a href="https://twitter.com/KYOCHON1991_" target="_blank" title="새창열림"><img th:src="@{/ico/ico_twitter.svg}" alt="교촌 트위터 바로가기"></a>
+                        </span>
+
+                        <a
+                            href="https://member.kyochonfnb.com/"
+                            target="_blank"
+                            class="bissMem"
+                            title="새창열림"><img th:src="@{/ico/ico_franchise.svg}" alt="가맹점 공간 바로가기"></a>
+                    </div>
+                    <div class="textBox">
+                        <span class="no_line">사업장소재지 : 39852 경상북도 칠곡군 가산면 송신로 78</span>
+                        <span>본사(오산교육원)주소 : 18150 경기도 오산시 동부대로 436번길 55-18</span>
+                        <span>상호명 : 고촌에프앤비(주)</span>
+                        <span>대표이사 : 정기훈</span><br>
+                        <span class="no_line">대표번호 : 031-371-3500</span>
+                        <span>소비자상담번호 : 080-320-3000</span>
+                        <span>사업자등록번호 : 513-81-16574</span>
+                        <span>통신판매업신고 : 2012-경상북도칠곡-00023호</span>
+                        <span>개인정보보호책임자 : 신용우</span>
+                        <span>영업시간 : 12:00~23:30</span>
+                    </div>
+                    <address>Copyright 2023 © GOCHON F&amp;B. All rights reserved.</address>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
